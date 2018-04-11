@@ -140,12 +140,13 @@ void encode(string original,string decoded){
 
 //----------------------------------------------------------//
 int32_t main(int32_t argc,char **argv){
+	clock_t time=clock();
 	if(argc!=3)
 		fprintf(stderr,"./huffman_encode.out"
 						" <original_file_name> <decoded_bin_file_name>\n");
 	string original=argv[1];
 	string decoded=argv[2];
 	encode(original,decoded);
-	
+	cout<<(clock()-time)*1.0/CLOCKS_PER_SEC;
 	return 0;
 }

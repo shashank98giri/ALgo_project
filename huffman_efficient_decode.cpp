@@ -14,6 +14,10 @@ struct node{
 
 struct node *root=new node('#');
 
+
+
+
+
 //-------------building huffman tree used for encoding-------------------//
 
 void build_tree(char alpha,string bit_rep){
@@ -88,6 +92,7 @@ void decode(string input,string output,string frequency_file){
 //----------------------------------------------------------------//
 
 int32_t main(int32_t argc,char** argv){
+	clock_t time=clock();
 	if(argc!=4)
 		fprintf(stderr,"./huffman_decode.out <frequency_file>"
 					"<decoded_bin_file> <output file> ");
@@ -96,6 +101,7 @@ int32_t main(int32_t argc,char** argv){
 	string output_file=argv[3];
 	
 	decode(decoded_file,output_file,frequency_file);
-	
+	cout<<(clock()-time)*1.0/CLOCKS_PER_SEC;
+
 	return 0;
 }
