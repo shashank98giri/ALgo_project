@@ -53,6 +53,7 @@ void getcodes(struct node* root,string s){
 
 void build_tree(){
     struct node* top;
+    
  
     // Create a vector & inserts all characters of data[]
     vector<struct node*> minHeap;
